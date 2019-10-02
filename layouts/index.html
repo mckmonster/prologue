@@ -1,217 +1,128 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>{{ .Title }}</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
-	</head>
-	<body>
+{{ define "main" }}
+<!-- Main -->
+<div id="main">
 
-		<!-- Header -->
-			<div id="header">
+	<!-- Intro -->
+	<section id="top" class="one dark cover">
+		<div class="container">
 
-				<div class="top">
+			<header>
+				<p>{{ .Content }}</p>
+			</header>
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="img/avatar.jpg" alt="" /></span>
-							<h1 id="title">{{ .Site.Params.name }}</h1>
-							<p>{{ .Site.Params.description }}</p>
-						</div>
+			<footer>
+				<a href="#portfolio" class="button scrolly">{{ .Title }}</a>
+			</footer>
+		</div>
+	</section>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
+	<!-- Portfolio -->
+	<section id="portfolio" class="two">
+		<div class="container">
 
-								Prologue's nav expects links in one of two formats:
+			<header>
+				<h2>Portfolio</h2>
+			</header>
 
-								1. Hash link (scrolls to a different section within the page)
+			<p>Texte a mettre pour expliquer les fiches</p>
 
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
 
-								2. Standard link (sends the user to another page/site)
-
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-							-->
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
-
+			<div class="row">
+				<div class="4u 12u$(mobile)">
+					{{ range .Site.Params.portfolio1 }}
+					<article class="item">
+						<a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
+						<header>
+							<h3>{{ .title }}</h3>
+						</header>
+					</article>
+					{{ end }}
 				</div>
 
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-              {{ range .Site.Params.social }}
-              <li><a href="{{ .link }}" class="icon fa-{{ .icon }}"><span class="label">{{ .medium }}</span></a></li>
-              {{ end }}
-						</ul>
-
+				<div class="4u 12u$(mobile)">
+					{{ range .Site.Params.portfolio2 }}
+					<article class="item">
+						<a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
+						<header>
+							<h3>{{ .title }}</h3>
+						</header>
+					</article>
+					{{ end }}
 				</div>
 
+				<div class="4u 12u$(mobile)">
+					{{ range .Site.Params.portfolio3 }}
+					<article class="item">
+						<a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
+						<header>
+							<h3>{{ .title }}</h3>
+						</header>
+					</article>
+					{{ end }}
+				</div>
 			</div>
 
-		<!-- Main -->
-			<div id="main">
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+		</div>
+	</section>
 
-							<header>
-								<h2 class="alt">Les arbres pour faire face aux défis du 21ème siècle</h2>
-								<p>Dans un contexte de canicules sévères, les arbres ont le vent en poupe.<br/>
-								On sait que les arbres permettent de séquestrer le CO², ils sont donc un remède au réchauffement de la planète. Pour le grand public, les arbres ça fait de l’ombre, c’est aussi la balade, le sport, voire la cueillette ou la chasse.<br/>
-								Au-delà, les arbres sont le fondement d’un écosystème durable (lutte contre l’érosion des sols, cycle de l’eau, photosynthèse, biodiversité végétale et animale). Ils permettent à l’homme de reconquérir des terres désertifiées et de développer des cultures vivrières sous leur aimable protection. On constate qu’ils sont capables de faire descendre la température de -3 à -10°C en milieu urbain (Îlots de Chaleur Urbains).<br/>
-								En outre, le best seller “La vie secrète des arbres” nous fait découvrir une intelligence verte insoupçonnée qui fait aujourd’hui l’objet de nombreuses recherches scientifiques.<br/>
-								Si les arbres sont une solution évidente pour faire face aux tsunamis du 21ème siècle ( tsunamis écologique, démocratique : fake news, technologique : IA et big data - cf https://crapaud-fou.org/ ), le défi est celui de la vitesse de mise en oeuvre, car un arbre ne pousse pas en quelques jours !<br/>
-								L’autre défi est celui de l’implication du plus grand nombre, tout un chacun devant faire partie de la solution et l’entretenir dans la durée.</p>
-							</header>
+	<!-- About Me -->
+	<section id="about" class="three">
+		<div class="container">
 
-							<footer>
-								<a href="#portfolio" class="button scrolly">Fiches</a>
-							</footer>
+			<header>
+				<h2>About Me</h2>
+			</header>
 
-						</div>
-					</section>
+			<a href="#" class="image featured"><img src="img/about.jpg" alt="" /></a>
 
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
+			<p>Fondée en juin 2018 et située à Marseille, l’association Semourais (semeurs de biodiversité) opère en
+				synergie avec de nombreux acteurs locaux (Articulteurs, Société d’Horticulture et d’Arboriculture des
+				Bouches du Rhône, Amis Culteurs, Talus, Cité de l’Agriculture...) et nationaux (Colibris, Crapauds Fous,
+				Ecotem).<br />
+				L’association Semourais agit et encourage les actions favorables à un retour d’une plus grande
+				biodiversité sur nos territoires.<br />
+				Si son objectif principal est de planter des forêts denses, riches en biodiversité, inspirées de la
+				méthode Miyawaki, elle partage ses activités entre :<br />
+				<ul>
+					<li>semis de prairies fleuries ;</li>
+					<li>recyclage et restauration de sols vivants ;</li>
+					<li>plantations de forêts.</li>
+				</ul>
+			</p>
 
-							<header>
-								<h2>Portfolio</h2>
-							</header>
+		</div>
+	</section>
 
-							<p>Texte a mettre pour expliquer les fiches</p>
+	<!-- Contact -->
+	<section id="contact" class="four">
+		<div class="container">
 
+			<header>
+				<h2>Contact</h2>
+			</header>
 
-              <div class="row">
-                <div class="4u 12u$(mobile)">
-                  {{ range .Site.Params.portfolio1 }} 
-                  <article class="item">
-                    <a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
-                    <header>
-                      <h3>{{ .title }}</h3>
-                    </header>
-                  </article>
-                  {{ end }}
-                </div>
+			<p>Elementum sem parturient nulla quam placerat viverra
+				mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
+				donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
+				orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
 
-                <div class="4u 12u$(mobile)">
-                  {{ range .Site.Params.portfolio2 }} 
-                  <article class="item">
-                    <a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
-                    <header>
-                      <h3>{{ .title }}</h3>
-                    </header>
-                  </article>
-                  {{ end }}
-                </div>
+			<form method="post" action="#">
+				<div class="row">
+					<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+					<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+					<div class="12u$">
+						<textarea name="message" placeholder="Message"></textarea>
+					</div>
+					<div class="12u$">
+						<input type="submit" value="Send Message" />
+					</div>
+				</div>
+			</form>
 
-                <div class="4u 12u$(mobile)">
-                  {{ range .Site.Params.portfolio3 }} 
-                  <article class="item">
-                    <a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
-                    <header>
-                      <h3>{{ .title }}</h3>
-                    </header>
-                  </article>
-                  {{ end }}
-                </div>
-              </div>
+		</div>
+	</section>
 
+</div>
 
-						</div>
-					</section>
-
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="img/about.jpg" alt="" /></a>
-
-							<p>Fondée en juin 2018 et située à Marseille, l’association Semourais (semeurs de biodiversité) opère en synergie avec de nombreux acteurs locaux (Articulteurs, Société d’Horticulture et d’Arboriculture des Bouches du Rhône, Amis Culteurs, Talus, Cité de l’Agriculture...) et nationaux (Colibris, Crapauds Fous, Ecotem).<br/>
-							L’association Semourais agit et encourage les actions favorables à un retour d’une plus grande biodiversité sur nos territoires.<br/>
-							Si son objectif principal est de planter des forêts denses, riches en biodiversité, inspirées de la méthode Miyawaki, elle partage ses activités entre :<br/>
-							<ul>
-							<li>semis de prairies fleuries ;</li>
-							<li>recyclage et restauration de sols vivants ;</li>	
-							<li>plantations de forêts.</li>
-							</ul>						
-							</p>
-
-						</div>
-					</section>
-
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="12u$">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="12u$">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; {{ .Site.Params.copyright }}</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Powered by <a href="https://gohugo.io/">Hugo</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.scrolly.min.js"></script>
-			<script src="/js/jquery.scrollzer.min.js"></script>
-			<script src="/js/skel.min.js"></script>
-			<script src="/js/util.js"></script>
-			<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/js/main.js"></script>
-
-	</body>
-</html>
+{{ end }}
