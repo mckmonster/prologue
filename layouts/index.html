@@ -5,124 +5,12 @@
 	<!-- Intro -->
 	<section id="top" class="one dark cover">
 		<div class="container">
-
-			<header>
-				<p>{{ .Content }}</p>
-			</header>
-
-			<footer>
-				<a href="#portfolio" class="button scrolly">{{ .Title }}</a>
-			</footer>
+			<p>{{ .Content }}</p>
 		</div>
 	</section>
-
-	<!-- Portfolio -->
-	<section id="portfolio" class="two">
-		<div class="container">
-
-			<header>
-				<h2>Portfolio</h2>
-			</header>
-
-			<p>Texte a mettre pour expliquer les fiches</p>
-
-
-			<div class="row">
-				<div class="4u 12u$(mobile)">
-					{{ range .Site.Params.portfolio1 }}
-					<article class="item">
-						<a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
-						<header>
-							<h3>{{ .title }}</h3>
-						</header>
-					</article>
-					{{ end }}
-				</div>
-
-				<div class="4u 12u$(mobile)">
-					{{ range .Site.Params.portfolio2 }}
-					<article class="item">
-						<a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
-						<header>
-							<h3>{{ .title }}</h3>
-						</header>
-					</article>
-					{{ end }}
-				</div>
-
-				<div class="4u 12u$(mobile)">
-					{{ range .Site.Params.portfolio3 }}
-					<article class="item">
-						<a href="{{ .url }}" class="image fit"><img src="{{ .source }}" alt="{{ .alt }}" /></a>
-						<header>
-							<h3>{{ .title }}</h3>
-						</header>
-					</article>
-					{{ end }}
-				</div>
-			</div>
-
-
-		</div>
-	</section>
-
-	<!-- About Me -->
-	<section id="about" class="three">
-		<div class="container">
-
-			<header>
-				<h2>About Me</h2>
-			</header>
-
-			<a href="#" class="image featured"><img src="img/about.jpg" alt="" /></a>
-
-			<p>Fondée en juin 2018 et située à Marseille, l’association Semourais (semeurs de biodiversité) opère en
-				synergie avec de nombreux acteurs locaux (Articulteurs, Société d’Horticulture et d’Arboriculture des
-				Bouches du Rhône, Amis Culteurs, Talus, Cité de l’Agriculture...) et nationaux (Colibris, Crapauds Fous,
-				Ecotem).<br />
-				L’association Semourais agit et encourage les actions favorables à un retour d’une plus grande
-				biodiversité sur nos territoires.<br />
-				Si son objectif principal est de planter des forêts denses, riches en biodiversité, inspirées de la
-				méthode Miyawaki, elle partage ses activités entre :<br />
-				<ul>
-					<li>semis de prairies fleuries ;</li>
-					<li>recyclage et restauration de sols vivants ;</li>
-					<li>plantations de forêts.</li>
-				</ul>
-			</p>
-
-		</div>
-	</section>
-
-	<!-- Contact -->
-	<section id="contact" class="four">
-		<div class="container">
-
-			<header>
-				<h2>Contact</h2>
-			</header>
-
-			<p>Elementum sem parturient nulla quam placerat viverra
-				mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-				donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-				orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-			<form method="post" action="#">
-				<div class="row">
-					<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-					<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-					<div class="12u$">
-						<textarea name="message" placeholder="Message"></textarea>
-					</div>
-					<div class="12u$">
-						<input type="submit" value="Send Message" />
-					</div>
-				</div>
-			</form>
-
-		</div>
-	</section>
-
+	{{ range .Pages }}
+		{{ partial "sectionindex.html" . }}
+	{{ end }}
 </div>
 
 {{ end }}
