@@ -28,12 +28,10 @@
             <ul>
                 <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span
                             class="icon fa-home">Intro</span></a></li>
-                <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span
-                            class="icon fa-th">Portfolio</span></a></li>
-                <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About
-                            Me</span></a></li>
-                <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span
-                            class="icon fa-envelope">Contact</span></a></li>
+                {{ range .Pages }}
+                <li><a href="#{{ .File.BaseFileName }}" id="{{ .File.BaseFileName }}-link" class="skel-layers-ignoreHref"><span
+                            class="icon {{ .Params.icon }}">{{ .Title }}</span></a></li>
+                {{ end }}
             </ul>
         </nav>
 
