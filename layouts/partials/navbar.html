@@ -28,7 +28,7 @@
             <ul>
                 <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span
                             class="icon fa-home">Intro</span></a></li>
-                {{ range .Pages }}
+                {{ range  where .Pages ".IsPage" "eq" true }}
                 <li><a href="#{{ .File.BaseFileName }}" id="{{ .File.BaseFileName }}-link" class="skel-layers-ignoreHref"><span
                             class="icon {{ .Params.icon }}">{{ .Title }}</span></a></li>
                 {{ end }}
