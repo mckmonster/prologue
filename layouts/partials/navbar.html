@@ -5,7 +5,7 @@
 
         <!-- Logo -->
         <div id="logo">
-            <span class="image avatar48"><img src="img/avatar.jpg" alt="" /></span>
+            <span class="image avatar48"><img src="{{ .Site.BaseURL }}/img/avatar.jpg" alt="" /></span>
             <h1 id="title">{{ .Site.Params.name }}</h1>
             <p>{{ .Site.Params.description }}</p>
         </div>
@@ -26,10 +26,10 @@
 
                         -->
             <ul>
-                <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span
+                <li><a href="{{ .Site.BaseURL }}#top" id="top-link" class="skel-layers-ignoreHref"><span
                             class="icon fa-home">Intro</span></a></li>
-                {{ range  where .Pages ".IsPage" "eq" true }}
-                <li><a href="#{{ .File.BaseFileName }}" id="{{ .File.BaseFileName }}-link" class="skel-layers-ignoreHref"><span
+                {{ range where .Site.RegularPages ".Dir" "eq" "/"}}
+                <li><a href="{{ .Site.BaseURL }}#{{ .File.BaseFileName }}" id="{{ .File.BaseFileName }}-link" class="skel-layers-ignoreHref"><span
                             class="icon {{ .Params.icon }}">{{ .Title }}</span></a></li>
                 {{ end }}
             </ul>
