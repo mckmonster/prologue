@@ -5,7 +5,7 @@
 			<p>{{ .Content }}</p>
 		</div>
 	</section>
-	{{ range .Pages }}
+	{{ range .RegularPages }}
 		{{ partial "sectionindex.html" . }}
 	{{ end }}
 {{ end }}
