@@ -1593,20 +1593,20 @@
 			color: #333;
 		}
 
-	h2 {
+	h1 {
 		font-size: 2em;
 		letter-spacing: -1px;
 	}
 
-		h2.alt {
+		h1.alt {
 			color: #888;
 		}
 
-			h2.alt strong {
+			h1.alt strong {
 				color: #666;
 			}
 
-	h3 {
+	h2 {
 		font-size: 1.5em;
 	}
 
@@ -1946,7 +1946,7 @@
 			font-size: 0.8em;
 		}
 
-			.item header h3 {
+			.item header h2 {
 				font-size: 1em;
 			}
 
@@ -2157,7 +2157,7 @@
 				color: rgba(255, 255, 255, 0.75);
 			}
 
-				#main > section.dark h2, #main > section.dark h3, #main > section.dark h4, #main > section.dark h5, #main > section.dark h6 {
+			#main > section.dark h1, #main > section.dark h2, #main > section.dark h3, #main > section.dark h4, #main > section.dark h5, #main > section.dark h6 {
 					color: inherit;
 				}
 
@@ -2512,7 +2512,7 @@
 				font-size: 14pt;
 			}
 
-			h2 {
+			h1 {
 				font-size: 1.5em;
 				letter-spacing: 0;
 				font-weight: 300;
