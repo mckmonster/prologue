@@ -7,9 +7,10 @@
 <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/custom.css" />
 
+<meta name="title" content="{{ .Title }}">
 <meta name="description" content="{{ .Summary }}">
-<meta name="keywords" content="Semourais, {{ .Params.Tags }}">
-<meta name="author" content="Semourais">
+<meta name="keywords" content="{{ .Params.Tags }}">
+<meta name="author" content="{{ .Params.author }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta property="og:title" content="{{ .Title }}" />
