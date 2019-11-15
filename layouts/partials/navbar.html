@@ -29,8 +29,10 @@
                 <li><a href="{{ .Site.BaseURL }}#top" id="top-link" class="skel-layers-ignoreHref"><span
                             class="icon fa-home">Intro</span></a></li>
                 {{ range where .Site.RegularPages ".Dir" "eq" "/"}}
-                <li><a href="{{ .Site.BaseURL }}#{{ .File.BaseFileName }}" id="{{ .File.BaseFileName }}-link" class="skel-layers-ignoreHref"><span
+                    {{ if isset .Params "title" }}
+                        <li><a href="{{ .Site.BaseURL }}#{{ .File.BaseFileName }}" id="{{ .File.BaseFileName }}-link" class="skel-layers-ignoreHref"><span
                             class="icon {{ .Params.icon }}">{{ .Title }}</span></a></li>
+                    {{ end }}
                 {{ end }}
             </ul>
         </nav>
